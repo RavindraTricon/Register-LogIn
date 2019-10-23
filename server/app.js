@@ -1,6 +1,6 @@
 require('./config/config');
 require('./models/db');
-require('./config/passportConfig');
+require('./utils/passportConfig');
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -15,6 +15,7 @@ var app = express();
 app.use(bodyParser.json());
 app.use(cors());
 app.use(passport.initialize());
+
 app.use('/api', rtsIndex);
 
 // error handler
